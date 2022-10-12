@@ -766,6 +766,11 @@ public class TIFFFaxDecompressor extends TIFFDecompressor {
 		}
 	    }
 
+	    // started with a 0 length white run
+	    if(bitOffset == 0){
+	    	changingElemSize = 0;
+	    }
+
 	    // Check whether this run completed one width
 	    if (bitOffset == w) {
                 // If the white run has not been terminated then ensure that
